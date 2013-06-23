@@ -1,0 +1,5 @@
+C:\Development\MyLibrary\Main\Test\MySystem.Test\bin\Debug\MySystem.Test.dll
+C:\Development\MyLibrary\Main\Test\MySystem.Test\bin\Debug\MySystem.Test.pdb
+C:\Development\MyLibrary\Main\Test\MySystem.Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\MyLibrary\Main\Test\MySystem.Test\obj\Debug\MySystem.Test.dll
+C:\Development\MyLibrary\Main\Test\MySystem.Test\obj\Debug\MySystem.Test.pdb

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{260251DF-7BBD-444D-9D29-ACEB786EABE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySystem</RootNamespace>
+    <AssemblyName>MySystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\Packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\Generic\DictionaryExtensions.cs" />
+    <Compile Include="Collections\Generic\HierarchicalDictionary.cs" />
+    <Compile Include="Collections\Generic\IEnumerableExtensions.cs" />
+    <Compile Include="Collections\Generic\IHierarchicalDictionaryItem.cs" />
+    <Compile Include="Collections\Generic\IPagingResult.cs" />
+    <Compile Include="Collections\Generic\ITreeDictionaryItem.cs" />
+    <Compile Include="Collections\Generic\PagingResult.cs" />
+    <Compile Include="Collections\Generic\TreeDictionary.cs" />
+    <Compile Include="Collections\Generic\TreeDictionaryItem.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\DisplayNameAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\RequiredAttribute.cs" />
+    <Compile Include="Data\EntityFramework\DbContextBuilder.cs" />
+    <Compile Include="Data\EntityFramework\DbContextInitializer.cs" />
+    <Compile Include="Data\EntityFramework\DbContextManager.cs" />
+    <Compile Include="Data\EntityFramework\EFGenericRepository.cs" />
+    <Compile Include="Data\EntityFramework\EFUnitOfWork.cs" />
+    <Compile Include="Data\EntityFramework\IDbContextStorage.cs" />
+    <Compile Include="Data\EntityFramework\IQueryableExtensions.cs" />
+    <Compile Include="Data\EntityFramework\SimpleDbContextStorage.cs" />
+    <Compile Include="Data\EntityFramework\WebDbContextStorage.cs" />
+    <Compile Include="Data\IAuditable.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Data\MemoryUnitOfWork.cs" />
+    <Compile Include="Data\Specification\AndSpecification.cs" />
+    <Compile Include="Data\Specification\CompositeSpecification.cs" />
+    <Compile Include="Data\Specification\ExpressionVisitor.cs" />
+    <Compile Include="Data\Specification\ISpecification.cs" />
+    <Compile Include="Data\Specification\OrSpecification.cs" />
+    <Compile Include="Data\Specification\Specification.cs" />
+    <Compile Include="Globalization\DbResourceProvider\Data\DbResource.cs" />
+    <Compile Include="Globalization\DbResourceProvider\Data\DbResourceContext.cs" />
+    <Compile Include="Globalization\DbResourceProvider\Data\DbResourceMap.cs" />
+    <Compile Include="Globalization\DbResourceProvider\Data\DbResourcePrimer.cs" />
+    <Compile Include="Globalization\DbResourceProvider\Data\DbResourcePrimerMap.cs" />
+    <Compile Include="Globalization\DbResourceProvider\DbResourceManager.cs" />
+    <Compile Include="Globalization\DbResourceProvider\DbResourceProvider.cs" />
+    <Compile Include="Globalization\DbResourceProvider\DbResourceProviderFactory.cs" />
+    <Compile Include="Globalization\DbResourceProvider\IResourceService.cs" />
+    <Compile Include="Globalization\DbResourceProvider\ResourceService.cs" />
+    <Compile Include="IntExtensions.cs" />
+    <Compile Include="Linq\Expressions\DataFilterBase.cs" />
+    <Compile Include="Linq\Expressions\ExpressionExtensions.cs" />
+    <Compile Include="Linq\Expressions\ParameterRebinder.cs" />
+    <Compile Include="Linq\IQueryableExtensions.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Practices\DependencyInjections\IDependencyResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\ICustomAttributeProviderExtensions.cs" />
+    <Compile Include="Runtime\Caching\DefaultCacheProvider.cs" />
+    <Compile Include="Runtime\Caching\ICacheProvider.cs" />
+    <Compile Include="Web\Mvc\Html\UrlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\ModelActions.cs" />
+    <Compile Include="Web\Mvc\ModelBase.cs" />
+    <Compile Include="Web\Mvc\MyTemplateInfo.cs" />
+    <Compile Include="Web\Mvc\MyViewDataDictionary.cs" />
+    <Compile Include="Web\Mvc\MyViewPage.cs" />
+    <Compile Include="Web\Mvc\TemplateInfoTemplateModes.cs" />
+    <Compile Include="Web\Security\MembershipProvider.cs" />
+    <Compile Include="Security\PasswordService.cs" />
+    <Compile Include="Security\SecurityRole.cs" />
+    <Compile Include="Security\User.cs" />
+    <Compile Include="Security\UserPasswordHistory.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TExtensions.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="Web\AjaxAuthorizationModule.cs" />
+    <Compile Include="Web\HttpContextExtensions.cs" />
+    <Compile Include="Web\Mvc\ControllerContextExtensions.cs" />
+    <Compile Include="Web\Mvc\ControllerExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\HtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\CssHtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\ImageLinkHtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\RagBarHtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\TreeHtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Html\IRagBarItem.cs" />
+    <Compile Include="Web\Mvc\AuthorizeAttribute.cs" />
+    <Compile Include="Web\Mvc\DecimalModelBinder.cs" />
+    <Compile Include="Web\Mvc\DefaultModelBinder.cs" />
+    <Compile Include="Web\Mvc\HtmlAttributeDictionary.cs" />
+    <Compile Include="Web\Mvc\HttpCookieValueProvider.cs" />
+    <Compile Include="Web\Mvc\HttpCookieValueProviderFactory.cs" />
+    <Compile Include="Web\Mvc\HttpHeaderValueProviderFactory.cs" />
+    <Compile Include="Web\Mvc\NoCacheAttribute.cs" />
+    <Compile Include="Web\Mvc\LocalisationActionAttribute.cs" />
+    <Compile Include="Web\Mvc\ModelStateDictionaryExtensions.cs" />
+    <Compile Include="Web\Mvc\CacheParametersAttribute.cs" />
+    <Compile Include="Web\MyController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.af-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.af.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.am-ET.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.am.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-AE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-BH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-DZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-EG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-IQ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-JO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-KW.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-LB.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-LY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-MA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-OM.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-QA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-SA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-SY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-TN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar-YE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ar.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.arn-CL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.arn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.as-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.as.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.az-Cyrl-AZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.az-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.az-Latn-AZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.az-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.az.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ba-RU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ba.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.be-BY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.be.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bg-BG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bg.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bn-BD.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bn-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bo-CN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bo.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.br-FR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.br.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bs-Cyrl-BA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bs-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bs-Latn-BA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bs-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.bs.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ca-ES.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ca.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.co-FR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.co.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.cs-CZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.cs.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.cy-GB.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.cy.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.da-DK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.da.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de-AT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de-CH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de-DE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de-LI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de-LU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.de.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.dsb-DE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.dsb.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.dv-MV.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.dv.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.el-GR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.el.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-029.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-AU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-BZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-CA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-GB.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-IE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-JM.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-MY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-NZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-PH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-SG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-TT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-US.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.en-ZW.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-AR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-BO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-CL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-CO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-CR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-DO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-EC.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-ES.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-GT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-HN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-MX.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-NI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-PA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-PE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-PR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-PY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-SV.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-US.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-UY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es-VE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.es.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.et-EE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.et.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.eu-ES.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.eu.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fa-IR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fa.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fi-FI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fi.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fil-PH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fil.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fo-FO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fo.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-BE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-CA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-CH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-FR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-LU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr-MC.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fy-NL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.fy.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ga-IE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ga.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gd-GB.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gd.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gl-ES.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gsw-FR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gsw.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gu-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.gu.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ha-Latn-NG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ha-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ha.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.he-IL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.he.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hi-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hi.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hr-BA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hr-HR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hsb-DE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hsb.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hu-HU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hu.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hy-AM.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.hy.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.id-ID.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.id.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ig-NG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ig.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ii-CN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ii.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.is-IS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.is.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.it-CH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.it-IT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.it.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.iu-Cans-CA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.iu-Cans.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.iu-Latn-CA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.iu-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.iu.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ja-JP.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ja.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ka-GE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ka.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kk-KZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kk.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kl-GL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.km-KH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.km.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kn-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ko-KR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ko.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kok-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.kok.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ky-KG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ky.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lb-LU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lb.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lo-LA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lo.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lt-LT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lt.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lv-LV.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.lv.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mi-NZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mi.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mk-MK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mk.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ml-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ml.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mn-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mn-MN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mn-Mong-CN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mn-Mong.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.moh-CA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.moh.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mr-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ms-BN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ms-MY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ms.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mt-MT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.mt.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nb-NO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nb.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ne-NP.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ne.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nl-BE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nl-NL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nn-NO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.no.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nso-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.nso.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.oc-FR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.oc.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.or-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.or.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pa-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pa.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pl-PL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.prs-AF.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.prs.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ps-AF.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ps.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pt-BR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pt-PT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.pt.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.qut-GT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.qut.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.quz-BO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.quz-EC.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.quz-PE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.quz.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.rm-CH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.rm.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ro-RO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ro.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ru-RU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ru.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.rw-RW.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.rw.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sa-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sa.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sah-RU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sah.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.se-FI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.se-NO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.se-SE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.se.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.si-LK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.si.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sk-SK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sk.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sl-SI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sma-NO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sma-SE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sma.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.smj-NO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.smj-SE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.smj.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.smn-FI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.smn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sms-FI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sms.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sq-AL.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sq.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Cyrl-BA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Cyrl-CS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Cyrl-ME.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Cyrl-RS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Latn-BA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Latn-CS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Latn-ME.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Latn-RS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sv-FI.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sv-SE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sv.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sw-KE.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.sw.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.syr-SY.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.syr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ta-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ta.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.te-IN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.te.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tg-Cyrl-TJ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tg-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tg.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.th-TH.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.th.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tk-TM.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tk.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tn-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tr-TR.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tr.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tt-RU.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tt.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tzm-Latn-DZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tzm-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.tzm.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ug-CN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ug.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uk-UA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uk.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ur-PK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.ur.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uz-Cyrl-UZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uz-Cyrl.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uz-Latn-UZ.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uz-Latn.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.uz.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.vi-VN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.vi.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.wo-SN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.wo.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.xh-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.xh.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.yo-NG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.yo.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-CHS.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-CHT.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-CN.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-Hans.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-Hant.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-HK.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-MO.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-SG.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh-TW.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zh.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zu-ZA.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.culture.zu.js" />
+    <None Include="Web\Scripts\Globalize\cultures\globalize.cultures.js" />
+    <None Include="Web\Scripts\Globalize\globalize.extensions.js" />
+    <None Include="Web\Scripts\Globalize\globalize.init.js" />
+    <None Include="Web\Scripts\Globalize\globalize.js" />
+    <None Include="Web\Scripts\highcharts.min.js" />
+    <None Include="Web\Scripts\highcharts.js" />
+    <EmbeddedResource Include="Web\Scripts\javascript.extensions.js" />
+    <None Include="Web\Scripts\jquery.js" />
+    <None Include="Web\Scripts\jquery.min.js" />
+    <None Include="Web\Scripts\jquery.ui.min.js" />
+    <None Include="Web\Scripts\jquery.cascadingDropDown.js" />
+    <None Include="Web\Scripts\jquery.extensions.js" />
+    <None Include="Web\Scripts\jquery.jqbind.js" />
+    <None Include="Web\Scripts\jquery.jstree-rc3.min.js" />
+    <None Include="Web\Scripts\jquery.jstree.js" />
+    <None Include="Web\Scripts\jquery.validate.js" />
+    <None Include="Web\Scripts\jquery.validate.min.js" />
+    <None Include="Web\Scripts\jquery.validate.unobtrusive.extensions.js" />
+    <None Include="Web\Scripts\jquery.validate.unobtrusive.js" />
+    <None Include="Web\Scripts\jquery.validate.unobtrusive.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
