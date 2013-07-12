@@ -1,9 +1,10 @@
-namespace MyLibrary.Web.Mvc
-{
-	using System.Collections;
-	using System.Collections.Generic;
 
-	/// <summary>
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Avantech.Common.Web.Mvc
+{
+    /// <summary>
     /// Html Attribute Dictionary for use with Html Helpers when specifying css classes on a OOCss manner
     /// </summary>
     public class HubHtmlAttributeDictionary : IDictionary<string, object>

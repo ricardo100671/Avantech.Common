@@ -1,11 +1,12 @@
-namespace MyLibrary.Web.Mvc.Html
-{
-	using System.Linq;
-	using System.Web;
-	using System.Web.Mvc;
-	using Collections.Generic;
+using Avantech.Common.Collections.Generic;
 
-	public static class HubTreeHtmlHelperExtensions
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class HubTreeHtmlHelperExtensions
     {
         public static IHtmlString HubTree(this HtmlHelper htmlHelper, TreeDictionary<TreeDictionaryItem> treeDictionary, string controlName, int rootId, bool enableCheckbox = false, bool enableIcons = false, bool showRoot = true)
         {

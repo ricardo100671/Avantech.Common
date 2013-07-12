@@ -1,8 +1,9 @@
-namespace MyLibrary.Web.Mvc
-{
-	using System.Web.Mvc;
 
-	public static class ControllerContextExtensions
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc
+{
+    public static class ControllerContextExtensions
     {
 
         /// <summary>

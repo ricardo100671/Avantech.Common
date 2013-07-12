@@ -1,12 +1,13 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider
-{
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
-	using Data;
+﻿using Avantech.Common.Globalization.DbResourceProvider.Data;
 
-	internal static class DbResourceManager
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Avantech.Common.Globalization.DbResourceProvider
+{
+    internal static class DbResourceManager
     {
         //Hold a static list of resource providers
         private static readonly List<DbResourceProvider> LoadedProviders = new List<DbResourceProvider>();

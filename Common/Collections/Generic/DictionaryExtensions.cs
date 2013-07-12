@@ -1,10 +1,11 @@
-﻿namespace MyLibrary.Collections.Generic
-{
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Helpers;
+﻿
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Helpers;
 
-	public static class DictionaryExtensions
+namespace Avantech.Common.Collections.Generic
+{
+    public static class DictionaryExtensions
 	{
 		/// <summary>
 		/// Converts the dictionary to a Json encoded string.

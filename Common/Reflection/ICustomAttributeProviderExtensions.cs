@@ -1,9 +1,10 @@
-namespace MyLibrary.Reflection
-{
-	using System;
-	using System.Reflection;
 
-	public static class ICustomAttributeProviderExtensions
+using System;
+using System.Reflection;
+
+namespace Avantech.Common.Reflection
+{
+    public static class ICustomAttributeProviderExtensions
 	{
 		/// <summary>
 		/// Gets the attribute.

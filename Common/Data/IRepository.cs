@@ -1,12 +1,13 @@
-﻿namespace MyLibrary.Data {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using Specification;
-	using System.Data;
+﻿using Avantech.Common.Data.Specification;
 
-	public enum SortOrder { Ascending, Descending }
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Data;
+
+namespace Avantech.Common.Data {
+    public enum SortOrder { Ascending, Descending }
     public enum RefreshMode { ClientWins, StoreWins }
 
     public interface IRepository {

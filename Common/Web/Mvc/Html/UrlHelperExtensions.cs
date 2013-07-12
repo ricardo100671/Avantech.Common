@@ -1,10 +1,11 @@
-﻿namespace MySystem.Web.Mvc.Html
-{
-	using System;
-	using System.Web.Mvc;
-	using System.Web.UI;
+﻿
+using System;
+using System.Web.Mvc;
+using System.Web.UI;
 
-	public static class UrlHelperExtensions {
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class UrlHelperExtensions {
 		public static string WebResource(this UrlHelper urlHelper, Type type, string resourcePath)
 		{
 			using(var page = new Page()) {

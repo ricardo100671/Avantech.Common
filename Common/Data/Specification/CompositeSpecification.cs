@@ -1,8 +1,9 @@
-﻿namespace MyLibrary.Data.Specification
-{
-	using System.Linq;
+﻿
+using System.Linq;
 
-	/// <summary>
+namespace Avantech.Common.Data.Specification
+{
+    /// <summary>
     /// http://devlicio.us/blogs/jeff_perrin/archive/2006/12/13/the-specification-pattern.aspx
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>

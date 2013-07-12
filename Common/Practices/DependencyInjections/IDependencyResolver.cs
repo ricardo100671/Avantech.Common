@@ -1,9 +1,8 @@
-﻿namespace MyLibrary.Practices.DependencyInjections
-{
-	using System.Collections.Generic;
-	using sys = System.Web.Mvc;
+﻿using System.Collections.Generic;
 
-	public interface IDependencyResolver : sys.IDependencyResolver {
+namespace Avantech.Common.Practices.DependencyInjections
+{
+    public interface IDependencyResolver : System.Web.Mvc.IDependencyResolver {
 		new object GetService(System.Type serviceType);
 
 		new IEnumerable<object> GetServices(System.Type serviceType);

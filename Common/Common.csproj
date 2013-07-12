@@ -8,8 +8,8 @@
     <ProjectGuid>{260251DF-7BBD-444D-9D29-ACEB786EABE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MySystem</RootNamespace>
-    <AssemblyName>MySystem</AssemblyName>
+    <RootNamespace>Avantech.Common</RootNamespace>
+    <AssemblyName>Avantech.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -53,12 +53,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Mvc">
-      <HintPath>..\..\Packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcExtensions">
+      <HintPath>packages\MvcExtensions.2.5.1\lib\net40\MvcExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -68,12 +77,35 @@
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,16 +124,21 @@
     <Compile Include="Collections\Generic\TreeDictionaryItem.cs" />
     <Compile Include="ComponentModel\DataAnnotations\DisplayNameAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RequiredAttribute.cs" />
-    <Compile Include="Data\EntityFramework\DbContextBuilder.cs" />
-    <Compile Include="Data\EntityFramework\DbContextInitializer.cs" />
-    <Compile Include="Data\EntityFramework\DbContextManager.cs" />
-    <Compile Include="Data\EntityFramework\EFGenericRepository.cs" />
-    <Compile Include="Data\EntityFramework\EFUnitOfWork.cs" />
-    <Compile Include="Data\EntityFramework\IDbContextStorage.cs" />
-    <Compile Include="Data\EntityFramework\IQueryableExtensions.cs" />
-    <Compile Include="Data\EntityFramework\SimpleDbContextStorage.cs" />
-    <Compile Include="Data\EntityFramework\WebDbContextStorage.cs" />
-    <Compile Include="Data\IAuditable.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\ValidationAttribute.cs" />
+    <Compile Include="Data\Entity\DbContextBuilder.cs" />
+    <Compile Include="Data\Entity\DbContextExtensions.cs" />
+    <Compile Include="Data\Entity\DbContextInitializer.cs" />
+    <Compile Include="Data\Entity\DbContextManager.cs" />
+    <Compile Include="Data\Entity\DbEntityEntryProxy.cs" />
+    <Compile Include="Data\Entity\EFGenericRepository.cs" />
+    <Compile Include="Data\Entity\EfRepositoryBase.cs" />
+    <Compile Include="Data\Entity\EFUnitOfWork.cs" />
+    <Compile Include="Data\Entity\IDbContextStorage.cs" />
+    <Compile Include="Data\Entity\IDbEntityEntryProxy.cs" />
+    <Compile Include="Data\Entity\IQueryableExtensions.cs" />
+    <Compile Include="Data\Entity\SimpleDbContextStorage.cs" />
+    <Compile Include="Data\Entity\WebDbContextStorage.cs" />
+    <Compile Include="Practices\IAuditableEntity.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\MemoryUnitOfWork.cs" />
@@ -111,6 +148,7 @@
     <Compile Include="Data\Specification\ISpecification.cs" />
     <Compile Include="Data\Specification\OrSpecification.cs" />
     <Compile Include="Data\Specification\Specification.cs" />
+    <Compile Include="DtoException.cs" />
     <Compile Include="Globalization\DbResourceProvider\Data\DbResource.cs" />
     <Compile Include="Globalization\DbResourceProvider\Data\DbResourceContext.cs" />
     <Compile Include="Globalization\DbResourceProvider\Data\DbResourceMap.cs" />
@@ -124,21 +162,43 @@
     <Compile Include="IntExtensions.cs" />
     <Compile Include="Linq\Expressions\DataFilterBase.cs" />
     <Compile Include="Linq\Expressions\ExpressionExtensions.cs" />
+    <Compile Include="Linq\Expressions\ExxpressionEqualityComparer.cs" />
     <Compile Include="Linq\Expressions\ParameterRebinder.cs" />
     <Compile Include="Linq\IQueryableExtensions.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Practices\DependencyInjections\IDependencyResolver.cs" />
+    <Compile Include="Practices\IEntity.cs" />
+    <Compile Include="Practices\IIndexableEntity.cs" />
+    <Compile Include="Practices\IRepository.cs" />
+    <Compile Include="Practices\IUnitOfWork.cs" />
+    <Compile Include="Practices\ServiceLocation\Ninject\KernelExtensions.cs" />
+    <Compile Include="Practices\ServiceLocation\Ninject\ServiceLocator.cs" />
+    <Compile Include="Practices\ServiceLocation\ServiceLocatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\ICustomAttributeProviderExtensions.cs" />
     <Compile Include="Runtime\Caching\DefaultCacheProvider.cs" />
     <Compile Include="Runtime\Caching\ICacheProvider.cs" />
+    <Compile Include="ServiceModel\Activition\ServiceLocatorServiceHostFactory.cs" />
+    <Compile Include="ServiceModel\Description\ServiceLocatorMapServiceBehavior.cs" />
+    <Compile Include="ServiceModel\Dispatcher\ServiceLocatorInstanceProvider.cs" />
+    <Compile Include="ServiceModel\DomainServiceBase.cs" />
+    <Compile Include="ServiceModel\ICrudableService.cs" />
+    <Compile Include="ServiceModel\ServiceLocatorServiceHost.cs" />
+    <Compile Include="UnitTesting\InMemoryDbSet.cs" />
+    <Compile Include="Web\Mvc\ControllerBase.cs" />
     <Compile Include="Web\Mvc\Html\UrlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\ICrudableController.cs" />
+    <Compile Include="Web\Mvc\LocalModelMetadataConfiguration.cs" />
     <Compile Include="Web\Mvc\ModelActions.cs" />
     <Compile Include="Web\Mvc\ModelBase.cs" />
-    <Compile Include="Web\Mvc\MyTemplateInfo.cs" />
-    <Compile Include="Web\Mvc\MyViewDataDictionary.cs" />
-    <Compile Include="Web\Mvc\MyViewPage.cs" />
+    <Compile Include="Web\Mvc\ModelMetadataExtensions.cs" />
+    <Compile Include="Web\Mvc\ModelMetadatConfiguration.cs" />
+    <Compile Include="Web\Mvc\ModelMetadatProvider.cs" />
+    <Compile Include="Web\Mvc\TemplateInfo.cs" />
+    <Compile Include="Web\Mvc\ViewDataDictionary.cs" />
+    <Compile Include="Web\Mvc\ViewPage.cs" />
     <Compile Include="Web\Mvc\TemplateInfoTemplateModes.cs" />
+    <Compile Include="Web\Security\IMembershipProxy.cs" />
     <Compile Include="Web\Security\MembershipProvider.cs" />
     <Compile Include="Security\PasswordService.cs" />
     <Compile Include="Security\SecurityRole.cs" />
@@ -169,6 +229,7 @@
     <Compile Include="Web\Mvc\ModelStateDictionaryExtensions.cs" />
     <Compile Include="Web\Mvc\CacheParametersAttribute.cs" />
     <Compile Include="Web\MyController.cs" />
+    <Compile Include="Web\Security\MembershipProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

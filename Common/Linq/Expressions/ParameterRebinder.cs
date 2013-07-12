@@ -1,9 +1,10 @@
-namespace MyLibrary.Linq.Expressions
-{
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
 
-	public class ParameterRebinder : ExpressionVisitor
+using System.Collections.Generic;
+using System.Linq.Expressions;
+
+namespace Avantech.Common.Linq.Expressions
+{
+    public class ParameterRebinder : ExpressionVisitor
     {
         private readonly Dictionary<ParameterExpression, ParameterExpression> _map;
 

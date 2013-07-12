@@ -1,49 +1,66 @@
-namespace MyLibrary.Linq.Expressions
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Globalization;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Reflection;
-	using System.Web.Mvc;
-	using ComponentModel.DataAnnotations;
-	using Reflection;
+using System.Web.Mvc;
+using Avantech.Common.ComponentModel.DataAnnotations;
+using Avantech.Common.Reflection;
 
-	public static class ExpressionExtensions
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+
+namespace Avantech.Common.Linq.Expressions
+{
+    public static class ExpressionExtensions
     {
-    	/// <summary>
-    	/// Gets the member name
-    	/// </summary>
-    	/// <typeparam name="T"></typeparam>
-    	/// <typeparam name="V"></typeparam>
-    	/// <param name="expression">The expression.</param>
-    	/// <returns></returns>
-    	public static string MemberName<T, V>(this Expression<Func<T, V>> expression)
+        /// <summary>
+        /// Gets the member name
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TMember">Type of the object's member.</typeparam>
+        /// <param name="accessor">An expression that evaluates to an objects member.</param>
+        /// <returns>The string name of the member.</returns>
+        public static string MemberName<T, TMember>(this Expression<Func<T, TMember>> accessor)
     	{
-    		var memberExpression = expression.Body as MemberExpression;
+    		var memberExpression = accessor.Body as MemberExpression;
     		if (memberExpression == null)
     			throw new InvalidOperationException("Expression must be a member expression");
 
     		return memberExpression.Member.Name;
     	}
 
-    	/// <summary>
-    	/// Determines whether the specified expression is required.
-    	/// </summary>
-    	/// <typeparam name="T"></typeparam>
-    	/// <typeparam name="TV">The type of the V.</typeparam>
-    	/// <param name="expression">The expression.</param>
-    	/// <returns>
-    	///   <c>true</c> if the specified expression is required; otherwise, <c>false</c>.
-    	/// </returns>
-    	public static bool IsRequired<T, TV>(this Expression<Func<T, TV>> expression)
-    	{
+        /// <summary>
+        /// Determines whether the member specified in the expression has the specified attribute />.
+        /// </summary>
+        /// <typeparam name="T">The Type of the object.</typeparam>
+        /// <typeparam name="TMember">The type of the object's member.</typeparam>
+        /// <param name="expression">The expression.</param>
+        /// <param name="attributeType">The attribute type to check for.</param>
+        /// <param name="inherited">Whether base classes should also be checked for the attributed.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified expression is required; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool HasAttribute<T, TMember>(
+            this Expression<Func<T, TMember>> expression, 
+            Type attributeType, 
+            bool inherited = false
+        ) {
     		var memberExpression = expression.Body as MemberExpression;
-    		if (memberExpression == null)
-    			throw new InvalidOperationException("Expression must be a member expression");
+    		
+            if(!attributeType.IsAssignableFrom(typeof(Attribute))) {
+                throw new InvalidOperationException("'attributeType' must a valid attribute type.");   
+            }
 
-    		return memberExpression.Member.GetAttribute<RequiredAttribute>() != null;
+            if(memberExpression == null) {
+                throw new InvalidOperationException("Expression must be a member expression");
+            }
+            
+            return memberExpression
+                .Member
+                .GetCustomAttributes(false)
+                .Any(a => 
+                    attributeType.IsAssignableFrom(a.GetType())
+                );
     	}
 
     	/// <summary>
@@ -70,12 +87,12 @@ namespace MyLibrary.Linq.Expressions
         /// Ands the specified left and right expression.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="first">The first.</param>
-        /// <param name="second">The second.</param>
-        /// <returns></returns>
-        public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> first, Expression<Func<T, bool>> second)
+        /// <param name="leftExpression">The first.</param>
+        /// <param name="rightExpression">The second.</param>
+        /// <returns>An ANDed expression of the first and second expression.</returns>
+        public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> leftExpression, Expression<Func<T, bool>> rightExpression)
         {
-            return first.Compose(second, Expression.And);
+            return leftExpression.Compose(rightExpression, Expression.And);
         }
 
         /// <summary>
@@ -84,13 +101,19 @@ namespace MyLibrary.Linq.Expressions
         /// <typeparam name="T"></typeparam>
         /// <param name="leftExpression">The left expression.</param>
         /// <param name="rightExpression">The right expression.</param>
-        /// <returns></returns>
+        /// <returns>An ORed expression of the first and second expression.</returns>
         public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> leftExpression, Expression<Func<T, bool>> rightExpression)
         {
             return leftExpression.Compose(rightExpression, Expression.Or);
         }
 
-		/// <returns></returns>
+        /// <summary>
+        /// converts the expression to text.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TProperty">The type of the property.</typeparam>
+        /// <param name="thisExpression">The this expression.</param>
+        /// <returns></returns>
 		public static string ToText<T, TProperty>(this Expression<Func<T, TProperty>> thisExpression)
 		{
 			var nameParts = new Stack<string>();

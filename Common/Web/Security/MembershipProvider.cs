@@ -1,8 +1,8 @@
-﻿namespace MyLibrary.Web.Security
-{
-	using sys = System.Web.Security;
+﻿
 
-	public class MembershipProvider : sys.MembershipProvider {
+namespace Avantech.Common.Web.Security
+{
+    public class MembershipProvider : System.Web.Security.MembershipProvider {
 
 		public override string ApplicationName
 		{
@@ -26,7 +26,7 @@
 			throw new System.NotImplementedException();
 		}
 
-		public override sys.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out sys.MembershipCreateStatus status)
+		public override System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out System.Web.Security.MembershipCreateStatus status)
 		{
 			throw new System.NotImplementedException();
 		}
@@ -46,17 +46,17 @@
 			get { throw new System.NotImplementedException(); }
 		}
 
-		public override sys.MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
+		public override System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public override sys.MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
+		public override System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public override sys.MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
+		public override System.Web.Security.MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
 		{
 			throw new System.NotImplementedException();
 		}
@@ -71,12 +71,12 @@
 			throw new System.NotImplementedException();
 		}
 
-		public override sys.MembershipUser GetUser(string username, bool userIsOnline)
+		public override System.Web.Security.MembershipUser GetUser(string username, bool userIsOnline)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public override sys.MembershipUser GetUser(object providerUserKey, bool userIsOnline)
+		public override System.Web.Security.MembershipUser GetUser(object providerUserKey, bool userIsOnline)
 		{
 			throw new System.NotImplementedException();
 		}
@@ -106,7 +106,7 @@
 			get { throw new System.NotImplementedException(); }
 		}
 
-		public override sys.MembershipPasswordFormat PasswordFormat
+		public override System.Web.Security.MembershipPasswordFormat PasswordFormat
 		{
 			get { throw new System.NotImplementedException(); }
 		}
@@ -136,7 +136,7 @@
 			throw new System.NotImplementedException();
 		}
 
-		public override void UpdateUser(sys.MembershipUser user)
+		public override void UpdateUser(System.Web.Security.MembershipUser user)
 		{
 			throw new System.NotImplementedException();
 		}

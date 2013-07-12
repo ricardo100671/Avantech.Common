@@ -1,8 +1,9 @@
-﻿namespace MyLibrary.Security
-{
-	using System;
+﻿
+using System;
 
-	/// <summary>
+namespace Avantech.Common.Security
+{
+    /// <summary>
 	/// A class representing a user password history object.
 	/// </summary>
 	public class UserPasswordHistory<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum> 

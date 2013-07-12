@@ -1,4 +1,6 @@
-namespace MyLibrary.Web.Mvc.Html
+
+
+namespace Avantech.Common.Web.Mvc.Html
 {
     /// <summary>
     /// Interface representing a rag bar item for use in ui displays.

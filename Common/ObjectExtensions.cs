@@ -1,4 +1,4 @@
-﻿namespace MyLibrary
+﻿namespace Avantech.Common
 {
 	public static class ObjectExtensions
 	{

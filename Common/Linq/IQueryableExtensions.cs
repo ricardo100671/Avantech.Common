@@ -1,9 +1,10 @@
-﻿namespace MyLibrary.Linq
-{
-	using System.Linq;
-	using System.Linq.Expressions;
+﻿
+using System.Linq;
+using System.Linq.Expressions;
 
-	public static class IQueryableExtensions
+namespace Avantech.Common.Linq
+{
+    public static class IQueryableExtensions
 	{
 		private static IOrderedQueryable<T> OrderingHelper<T>(IQueryable<T> source, string propertyName, bool descending)
         {

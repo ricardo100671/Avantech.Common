@@ -1,8 +1,9 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider.Data
-{
-	using System;
+﻿
+using System;
 
-	internal class DbResource
+namespace Avantech.Common.Globalization.DbResourceProvider.Data
+{
+    internal class DbResource
     {
         /// <summary>
         /// Gets or sets the type of the resource.

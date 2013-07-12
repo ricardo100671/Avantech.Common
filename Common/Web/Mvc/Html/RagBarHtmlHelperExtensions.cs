@@ -1,13 +1,14 @@
-namespace MyLibrary.Web.Mvc.Html
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using System.Web;
-	using System.Web.Mvc;
 
-	public static class HubRagBarHtmlHelperExtensions
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class HubRagBarHtmlHelperExtensions
     {
         public static IHtmlString HubRagBar(this HtmlHelper htmlHelper, IRagBarItem ragBarItem)
         {

@@ -1,10 +1,11 @@
-namespace MyLibrary
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 
-	public static class TypeExtensions
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Avantech.Common
+{
+    public static class TypeExtensions
 	{
 		/// <summary>
 		/// Converts an enumeration into a dictionary, 

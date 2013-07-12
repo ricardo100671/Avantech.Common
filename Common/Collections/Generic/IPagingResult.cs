@@ -1,8 +1,9 @@
-namespace MyLibrary.Collections.Generic
-{
-	using System.Collections.Generic;
 
-	public interface IPagingResult<T> where T : class
+using System.Collections.Generic;
+
+namespace Avantech.Common.Collections.Generic
+{
+    public interface IPagingResult<T> where T : class
     {
         int Skip { get; }
         int Take { get; }

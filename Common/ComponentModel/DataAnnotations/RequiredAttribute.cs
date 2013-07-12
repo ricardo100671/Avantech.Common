@@ -1,9 +1,10 @@
-namespace MyLibrary.ComponentModel.DataAnnotations
-{
-	using System;
-	using System.ComponentModel.DataAnnotations;
 
-	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Avantech.Common.ComponentModel.DataAnnotations
+{
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class RequiredAttribute : ValidationAttribute
     {
         private const string DefaultErrorMessage = "Value Is Required";

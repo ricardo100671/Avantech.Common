@@ -1,9 +1,10 @@
-namespace MyLibrary.Collections.Generic
-{
-	using System;
-	using System.Collections.Generic;
 
-	/// <summary>
+using System;
+using System.Collections.Generic;
+
+namespace Avantech.Common.Collections.Generic
+{
+    /// <summary>
     /// Represents a paged set of records containing navigation, count, sort and filter information for grid displays
     /// </summary>
     /// <typeparam name="T">Any class implementing IEntity</typeparam>

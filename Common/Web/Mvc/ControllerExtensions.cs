@@ -1,12 +1,13 @@
-namespace MyLibrary.Web.Mvc{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Web.Mvc;
-	using System.Web.Routing;
 
-	public static class ControllerExtensions {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace Avantech.Common.Web.Mvc{
+    public static class ControllerExtensions {
         public static RedirectToRouteResult HubRedirectToActionPermanent<TController>(this TController controller, Expression<Action<TController>> action, bool useTempData = false, string routeName = null) where TController : Controller {
             return _RedirectToAction(controller, action, useTempData, true, routeName);
         }

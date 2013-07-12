@@ -1,8 +1,9 @@
-namespace MyLibrary.Globalization.DbResourceProvider
-{
-	using System.Collections.Generic;
 
-	public interface IResourceService
+using System.Collections.Generic;
+
+namespace Avantech.Common.Globalization.DbResourceProvider
+{
+    public interface IResourceService
     {
         /// <summary>
         /// Sets the resource.

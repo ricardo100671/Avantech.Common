@@ -1,4 +1,6 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider.Data
+﻿
+
+namespace Avantech.Common.Globalization.DbResourceProvider.Data
 {
     internal class DbResourcePrimer
     {

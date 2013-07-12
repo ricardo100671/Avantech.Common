@@ -1,10 +1,11 @@
-namespace MyLibrary.Web.Mvc
-{
-	using System;
-	using System.Globalization;
-	using System.Web.Mvc;
 
-	/// <summary>
+using System;
+using System.Globalization;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc
+{
+    /// <summary>
 	/// The Default model binder parses request variable with invariant culture and form variable with the current culture.
 	/// This causes problems when decimal values that are posted, since some cultures use commas as periods,
 	/// causing the values to fail to bind correctly when sent via ajax request.

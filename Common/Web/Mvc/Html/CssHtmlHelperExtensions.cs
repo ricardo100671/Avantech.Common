@@ -1,9 +1,9 @@
-namespace MyLibrary.Web.Mvc.Html
-{
-	using System.Web.Mvc;
-	using Mvc;
 
-	public static class HubCssHtmlHelperExtensions
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class HubCssHtmlHelperExtensions
 	{
         /// <summary>
         /// Create the list of css classes to be in the class attribute for a given list of OOCSS classes.

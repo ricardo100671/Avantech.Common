@@ -1,4 +1,6 @@
-namespace MyLibrary.Collections.Generic {
+
+
+namespace Avantech.Common.Collections.Generic {
 	/// <summary>
 	/// Represents an item that has hierarchical properties
 	/// </summary>

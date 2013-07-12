@@ -1,12 +1,13 @@
-namespace MyLibrary.Security
-{
-	using System;
-	using System.Linq;
-	using System.Security.Cryptography;
-	using System.Text;
-	using System.Text.RegularExpressions;
 
-	public static class PasswordService
+using System;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace Avantech.Common.Security
+{
+    public static class PasswordService
     {
         // Define supported password characters.
         // You can add (or remove) characters to (from) this string.

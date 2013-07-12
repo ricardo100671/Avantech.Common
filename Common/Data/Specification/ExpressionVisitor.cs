@@ -1,11 +1,12 @@
-﻿namespace MyLibrary.Data.Specification
-{
-	using System;
-	using System.Collections.ObjectModel;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
+﻿
+using System;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
-	/// <summary>
+namespace Avantech.Common.Data.Specification
+{
+    /// <summary>
     /// This comes from Matt Warren's sample:
     /// http://blogs.msdn.com/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
     /// </summary>

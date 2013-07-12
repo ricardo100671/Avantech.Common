@@ -1,9 +1,10 @@
-namespace MyLibrary.Web.Mvc
-{
-	using System;
-	using System.Web.Mvc;
 
-	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
+using System;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc
+{
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public class HubAuthorizeAttribute : AuthorizeAttribute
     {
         /// <summary>

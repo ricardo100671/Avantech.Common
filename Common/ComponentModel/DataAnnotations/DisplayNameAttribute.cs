@@ -1,10 +1,11 @@
-namespace MyLibrary.ComponentModel.DataAnnotations
-{
-	using System;
-	using System.ComponentModel;
-	using System.Web;
 
-	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+using System;
+using System.ComponentModel;
+using System.Web;
+
+namespace Avantech.Common.ComponentModel.DataAnnotations
+{
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class HubDisplayNameAttribute : DisplayNameAttribute
     {
         private const string ResourceType = "Property";

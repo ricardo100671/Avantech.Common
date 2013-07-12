@@ -1,10 +1,11 @@
-namespace MyLibrary.Web.Mvc {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Mvc;
 
-	public class HubDefaultModelBinder : DefaultModelBinder {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc {
+    public class HubDefaultModelBinder : DefaultModelBinder {
         protected override object CreateModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Type modelType) {
         	var typeToCreate = modelType;
 			bool hasDefaultConstructor = false;

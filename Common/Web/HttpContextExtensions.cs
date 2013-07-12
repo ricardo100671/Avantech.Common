@@ -1,9 +1,10 @@
-namespace MyLibrary.Web
-{
-	using System.Web;
-	using System.Web.Mvc;
 
-	public static class HttpContextExtensions
+using System.Web;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web
+{
+    public static class HttpContextExtensions
     {
         /// <summary>
         ///   Gets the route string in the form '(/area)/controller/action'.

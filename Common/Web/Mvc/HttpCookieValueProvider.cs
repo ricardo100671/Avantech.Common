@@ -1,10 +1,11 @@
-namespace MyLibrary.Web.Mvc {
-	using System.Globalization;
-	using System.Text.RegularExpressions;
-	using System.Web;
-	using System.Web.Mvc;
 
-	public class HttpCookieValueProvider : IValueProvider {
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc {
+    public class HttpCookieValueProvider : IValueProvider {
         private readonly HttpCookieCollection _cookieCollection;
 
         public HttpCookieValueProvider(HttpCookieCollection cookieCollection) {

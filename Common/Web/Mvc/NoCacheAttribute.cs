@@ -1,9 +1,10 @@
-namespace MyLibrary.Web.Mvc {
-	using System;
-	using System.Web;
-	using System.Web.Mvc;
 
-	public class NoCacheAttribute : ActionFilterAttribute { 
+using System;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc {
+    public class NoCacheAttribute : ActionFilterAttribute { 
         public override void OnResultExecuting(ResultExecutingContext filterContext) { 
             filterContext.HttpContext.Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); 
             filterContext.HttpContext.Response.Cache.SetValidUntilExpires(false);

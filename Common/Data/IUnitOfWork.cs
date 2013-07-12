@@ -1,10 +1,11 @@
-﻿namespace MyLibrary.Data
-{
-	using System;
-	using System.Data;
-	using System.Data.Objects;
+﻿
+using System;
+using System.Data;
+using System.Data.Objects;
 
-	public interface IUnitOfWork : IDisposable
+namespace Avantech.Common.Data
+{
+    public interface IUnitOfWork : IDisposable
     {
         bool IsInTransaction { get; }
 

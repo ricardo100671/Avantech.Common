@@ -1,10 +1,11 @@
-namespace MyLibrary.Web.Mvc.Html
-{
-	using System.Collections.Generic;
-	using System.ComponentModel;
-	using System.Web.Mvc;
 
-	public static class HubImageLinkHtmlHelperExtensions
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class HubImageLinkHtmlHelperExtensions
     {
         public static MvcHtmlString HubImageLink(this HtmlHelper helper, string imageUrl, string altText, string actionName, string controllerName,
                                                  object routeValues, object linkHtmlAttributes, object imgHtmlAttributes)

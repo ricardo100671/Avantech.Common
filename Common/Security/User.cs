@@ -1,12 +1,12 @@
-﻿namespace MyLibrary.Security
-{
-	using System;
-	using System.Collections.Generic;
-	using System.ComponentModel.DataAnnotations;
-	using System.Text;
-	using Data;
+﻿
+using Avantech.Common.Data;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-	public abstract class User<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum> : IAuditable<TEntityTypesEnum>
+namespace Avantech.Common.Security
+{
+    public abstract class User<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum> : IAuditable<TEntityTypesEnum>
 		where TUser : User<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum>
 		where TSecurityRole : SecurityRole<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum>
 		where TUserPasswordHistory : UserPasswordHistory<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum>

@@ -1,9 +1,10 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider
-{
-	using System.IO;
-	using System.Web.Compilation;
+﻿
+using System.IO;
+using System.Web.Compilation;
 
-	/// <remarks>
+namespace Avantech.Common.Globalization.DbResourceProvider
+{
+    /// <remarks>
     ///   Runtime resource provider using a Database.
     /// </remarks>
     internal sealed class DbResourceProviderFactory : ResourceProviderFactory

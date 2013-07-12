@@ -1,14 +1,17 @@
-namespace MyLibrary
-{
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Runtime.Serialization;
-	using System.Text;
-	using System.Text.RegularExpressions;
-	using System.Xml;
 
-	public static class StringExtensions
+using System.Data.Entity.Design.PluralizationServices;
+using System.Globalization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml;
+
+namespace Avantech.Common
+{
+    public static class StringExtensions
 	{
 		/// <summary>
 		/// Indicates whether the specifed string is null or <see cref="System.String.Empty"/>.
@@ -33,30 +36,49 @@ namespace MyLibrary
 			return String.IsNullOrWhiteSpace(thisString);
 		}
 
-		/// <summary>
-		/// Replaces the format items in the specifed string with the string representation 
-		/// of a correspondiong object ina specified array.
-		/// <remarks>Same functionality as String.Format(), that allows for a fluid coding style.</remarks>
-		/// </summary>
-		/// <param name="thisString">A composite format string.</param>
-		/// <param name="args">The object to format.</param>
-		/// <returns></returns>
-		public static string FFormat(this String thisString, params object[] args) {
-			return String.Format(thisString, args);
-		}
+        /// <summary>
+        /// Replaces the format items in the specifed string with the string representation 
+        /// of a correspondiong object ina specified array.
+        /// <remarks>Same functionality as String.Format(), that allows for a fluid coding style.</remarks>
+        /// </summary>
+        /// <param name="thisString">A composite format string.</param>
+        /// <param name="args">The object to format.</param>
+        /// <returns></returns>
+        public static string FormatWith(this String thisString, params object[] args)
+        {
+            return String.Format(thisString, args);
+        }
 
-		/// <summary>
-		/// Concatenates an array of strings with a specified separator.
-		/// </summary>
-		/// <param name="thisArray">The array of strings to be concatenated.</param>
-		/// <param name="separator">The separator to be used for concatenation.</param>
-		/// <returns>
-		/// A <see cref="System.String"/> that represents this instance.
-		/// </returns>
-		public static string FJoin(this string[] thisArray, string separator)
-		{
-			return String.Join(separator, thisArray);
-		}
+        public static string FormatWith(this String thisString, IFormatProvider formatProvider, params object[] args)
+        {
+            return String.Format(formatProvider, thisString, args);
+        }
+
+        /// <summary>
+        /// Concatenates an array of strings with a specified separator.
+        /// </summary>
+        /// <param name="thisArray">The array of strings to be concatenated.</param>
+        /// <param name="separator">The separator to be used for concatenation.</param>
+        /// <returns>
+        /// A <see cref="string"/> that represents this instance.
+        /// </returns>
+        public static string JoinWith(this string[] thisArray, string separator)
+        {
+            return String.Join(separator, thisArray);
+        }
+
+        /// <summary>
+        /// Concatenates a list of strings with a specified separator.
+        /// </summary>
+        /// <param name="thisList">The list of strings to be concatenated.</param>
+        /// <param name="separator">The separator to be used for concatenation.</param>
+        /// <returns>
+        /// A <see cref="string"/> that represents this instance.
+        /// </returns>
+        public static string JoinWith(this List<string> thisList, string separator)
+        {
+            return String.Join(separator, thisList.ToArray());
+        }
 
 		/// <summary>
 		/// Deserializes the specified string into a strongly type object instance. 
@@ -169,5 +191,51 @@ namespace MyLibrary
 
 			return segments.ToArray();
 		}
+
+        /// <summary>
+        /// Converts a string to an enumeration
+        /// </summary>
+        /// <typeparam name="TEnum">The target enumeration type to convert the string to converted.</typeparam>
+        /// <param name="thisString">The string to be convert to an enumeration type.</param>
+        /// <returns>The enumeration member of the target enumeration type whos value matches the integer.</returns>
+        public static TEnum ToEnum<TEnum>(this string thisString)
+        {
+            if (!typeof(TEnum).IsEnum)
+                throw new ArgumentException("Generic argument must be an enumeration.");
+
+            return (TEnum)Enum.Parse(typeof(TEnum), thisString);
+        }
+
+        /// <summary>
+        /// Pluralizes the specified this string.
+        /// </summary>
+        /// <param name="thisString">The string to be pluralised.</param>
+        /// <returns>A pluralised version of the specified string.</returns>
+        public static string Pluralize(this string thisString)
+        {
+            PluralizationService service = PluralizationService.CreateService(
+                CultureInfo.GetCultureInfo("en-us")
+            );
+
+            if(!service.IsSingular(thisString)) throw new InvalidOperationException("'thisString' does not appear to be in singular form.");
+
+            return service.Pluralize(thisString);
+        }
+
+        /// <summary>
+        /// Singularize the specified this string.
+        /// </summary>
+        /// <param name="thisString">The string to be singularize.</param>
+        /// <returns>A singularize version of the specified string.</returns>
+        public static string Singularize(this string thisString)
+        {
+            PluralizationService service = PluralizationService.CreateService(
+                CultureInfo.GetCultureInfo("en-us")
+            );
+
+            if(!service.IsPlural(thisString)) throw new InvalidOperationException("'thisString' does not appear to be in plural form." )
+
+            return service.Singularize(thisString);
+        }
 	}
 }

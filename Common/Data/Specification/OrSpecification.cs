@@ -1,9 +1,10 @@
-namespace MyLibrary.Data.Specification
-{
-	using System.Linq;
-	using Linq.Expressions;
+using Avantech.Common.Linq.Expressions;
 
-	public class OrSpecification<TEntity> : CompositeSpecification<TEntity>
+using System.Linq;
+
+namespace Avantech.Common.Data.Specification
+{
+    public class OrSpecification<TEntity> : CompositeSpecification<TEntity>
 	{
 		public OrSpecification(Specification<TEntity> leftSide, Specification<TEntity> rightSide)
 			: base(leftSide, rightSide){

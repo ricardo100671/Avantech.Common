@@ -1,9 +1,8 @@
-namespace MyLibrary.Data.Specification
-{
-	using System.Linq;
-	using Linq.Expressions;
+using System.Linq;
 
-	public class AndSpecification<TEntity> : CompositeSpecification<TEntity>
+namespace Avantech.Common.Data.Specification
+{
+    public class AndSpecification<TEntity> : CompositeSpecification<TEntity>
 	{
 		public AndSpecification(Specification<TEntity> leftSide, Specification<TEntity> rightSide)
 			: base(leftSide, rightSide)

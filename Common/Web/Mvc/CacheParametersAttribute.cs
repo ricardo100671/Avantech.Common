@@ -1,11 +1,12 @@
-﻿namespace MyLibrary.Web.Mvc
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Web.Mvc;
-	using System.Linq;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using System.Linq;
 
-	/// <summary>
+namespace Avantech.Common.Web.Mvc
+{
+    /// <summary>
 	/// Provide functionality to allow parameter values of action methods to become sticky. 
 	/// i.e. Parameter values provided in the first call to the actiopn, do not have to be specified on subsequent calls
 	/// as the original values are held in Session. 

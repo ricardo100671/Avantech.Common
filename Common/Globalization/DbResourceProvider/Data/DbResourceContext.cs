@@ -1,8 +1,8 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider.Data
-{
-	using System.Data.Entity;
+﻿
 
-	internal class DbResourceContext : DbContext
+namespace Avantech.Common.Globalization.DbResourceProvider.Data
+{
+    internal class DbResourceContext : DbContext
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DbResourceContext"/> class.

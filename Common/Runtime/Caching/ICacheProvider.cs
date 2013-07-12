@@ -1,4 +1,6 @@
-namespace MyLibrary.Runtime.Caching
+
+
+namespace Avantech.Common.Runtime.Caching
 {
 	public interface ICacheProvider<in TCacheKeyEnum>
 		where TCacheKeyEnum : struct

@@ -1,10 +1,11 @@
-namespace MyLibrary.Collections.Generic
-{
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
 
-	/// <summary>
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Avantech.Common.Collections.Generic
+{
+    /// <summary>
     /// A class for fast access and modification to hierachical items.
     /// </summary>
     /// <typeparam name="T">Any object implementing ITreeDictionaryItem</typeparam>

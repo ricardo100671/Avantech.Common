@@ -1,8 +1,9 @@
-namespace MyLibrary.Data.Specification
-{
-	using System.Linq;
 
-	/// <summary>
+using System.Linq;
+
+namespace Avantech.Common.Data.Specification
+{
+    /// <summary>
 	/// In simple terms, a specification is a small piece of logic which is independent and give an answer 
 	/// to the question “does this match ?”. With Specification, we isolate the logic that do the selection 
 	/// into a reusable business component that can be passed around easily from the entity we are selecting.

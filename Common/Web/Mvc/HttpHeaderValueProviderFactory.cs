@@ -1,10 +1,11 @@
-namespace MyLibrary.Web.Mvc {
-	using System.Collections.Specialized;
-	using System.Globalization;
-	using System.Text.RegularExpressions;
-	using System.Web.Mvc;
 
-	public class HubHttpHeaderValueProviderFactory : ValueProviderFactory {
+using System.Collections.Specialized;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc {
+    public class HubHttpHeaderValueProviderFactory : ValueProviderFactory {
         /// <summary>
         /// Instantiates and returns a Value Provider which retrieves values from Request Headers
         /// Strips all hyphens from header field names so that they can be specified as, case insensative, action parameter names.

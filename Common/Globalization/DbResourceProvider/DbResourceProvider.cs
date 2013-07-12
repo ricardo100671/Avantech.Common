@@ -1,13 +1,14 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider
-{
-	using System;
-	using System.Collections;
-	using System.Collections.Specialized;
-	using System.Globalization;
-	using System.Resources;
-	using System.Web.Compilation;
+﻿
+using System;
+using System.Collections;
+using System.Collections.Specialized;
+using System.Globalization;
+using System.Resources;
+using System.Web.Compilation;
 
-	internal sealed class DbResourceProvider : IResourceProvider
+namespace Avantech.Common.Globalization.DbResourceProvider
+{
+    internal sealed class DbResourceProvider : IResourceProvider
     {
         private IDictionary _resourceCache;
 

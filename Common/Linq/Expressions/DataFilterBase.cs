@@ -1,11 +1,12 @@
-namespace MyLibrary.Linq.Expressions
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
 
-	/// <summary>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+
+namespace Avantech.Common.Linq.Expressions
+{
+    /// <summary>
 	/// A class containing basic and inheritable functionality to a facilitate creation of a specialized
 	/// data filter classes that can resolve filter names and associated values into linq expressions that can be used to retrieve data
 	/// </summary>

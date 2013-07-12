@@ -1,4 +1,6 @@
-namespace MyLibrary.Collections.Generic {
+
+
+namespace Avantech.Common.Collections.Generic {
 	public interface ITreeDictionaryItem
 	{
 		int Id { get; set; }

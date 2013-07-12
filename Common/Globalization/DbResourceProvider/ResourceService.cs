@@ -1,10 +1,11 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Threading;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Threading;
 
-	public class ResourceService : IResourceService
+namespace Avantech.Common.Globalization.DbResourceProvider
+{
+    public class ResourceService : IResourceService
     {
         internal const string InvariantCultureCode = "Invariant";
 

@@ -1,7 +1,8 @@
-﻿namespace MyLibrary.Data {
-	using System;
+﻿
+using System;
 
-	public class MemoryUnitOfWork : IUnitOfWork {
+namespace Avantech.Common.Data {
+    public class MemoryUnitOfWork : IUnitOfWork {
         
         public bool IsInTransaction {
             get { throw new NotImplementedException(); }

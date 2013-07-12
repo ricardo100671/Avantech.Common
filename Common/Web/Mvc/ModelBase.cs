@@ -1,7 +1,8 @@
-﻿namespace MySystem.Web.Mvc {
-	using System;
+﻿
+using System;
 
-	public class ModelBase<TController> {
+namespace Avantech.Common.Web.Mvc {
+    public class ModelBase<TController> {
 		public Action<TController> Action { get; set; }
 	}
 }

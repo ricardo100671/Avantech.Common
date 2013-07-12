@@ -1,8 +1,8 @@
-﻿namespace MyLibrary.Globalization.DbResourceProvider.Data
-{
-	using System.Data.Entity.ModelConfiguration;
+﻿
 
-	internal class DbResourcePrimerMap : EntityTypeConfiguration<DbResourcePrimer>
+namespace Avantech.Common.Globalization.DbResourceProvider.Data
+{
+    internal class DbResourcePrimerMap : EntityTypeConfiguration<DbResourcePrimer>
     {
         public DbResourcePrimerMap()
         {

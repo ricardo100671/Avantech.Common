@@ -1,14 +1,15 @@
-namespace MySystem.Web.Mvc.Html
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Reflection;
-	using System.Web.Handlers;
-	using System.Web.Mvc;
 
-	public static class HtmlHelperExtensions
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Web.Handlers;
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc.Html
+{
+    public static class HtmlHelperExtensions
 	{
 		public static MvcHtmlString DropDownList
 		(

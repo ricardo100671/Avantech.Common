@@ -1,11 +1,12 @@
-namespace MyLibrary.Web
-{
-	using System;
-	using System.Web;
-	using System.Web.Mvc;
-	using System.Web.Script.Serialization;
 
-	public class AjaxAuthorizationModule : IHttpModule
+using System;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Script.Serialization;
+
+namespace Avantech.Common.Web
+{
+    public class AjaxAuthorizationModule : IHttpModule
     {
         /// <summary>
         /// Initializes a module and prepares it to handle requests.

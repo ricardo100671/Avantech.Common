@@ -1,7 +1,8 @@
-namespace MyLibrary.Web.Mvc {
-	using System.Web.Mvc;
 
-	public class HubHttpCookieValueProviderFactory : ValueProviderFactory {
+using System.Web.Mvc;
+
+namespace Avantech.Common.Web.Mvc {
+    public class HubHttpCookieValueProviderFactory : ValueProviderFactory {
 		/// <summary>
         /// Instantiates and returns a Value Provider which retrieves values from Request Cookies
         /// </summary>

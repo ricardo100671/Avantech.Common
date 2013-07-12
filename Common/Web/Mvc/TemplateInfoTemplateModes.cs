@@ -1,4 +1,6 @@
-﻿namespace MySystem.Web.Mvc {
+﻿
+
+namespace Avantech.Common.Web.Mvc {
 	public enum TemplateInfoTemplateModes {
 		Display, 
 		Edit

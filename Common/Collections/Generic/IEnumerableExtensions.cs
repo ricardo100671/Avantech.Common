@@ -1,12 +1,13 @@
-namespace MyLibrary.Collections.Generic
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using Linq;
+using Avantech.Common.Linq;
 
-	public static class IEnumerableExtensions
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+
+namespace Avantech.Common.Collections.Generic
+{
+    public static class IEnumerableExtensions
     {
         /// <summary>
         /// Retrieves a paged selection of records according to the parameters supplied.

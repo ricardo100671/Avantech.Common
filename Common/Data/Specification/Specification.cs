@@ -1,11 +1,12 @@
-namespace MyLibrary.Data.Specification
-{
-	using System;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using Linq.Expressions;
+using Avantech.Common.Linq.Expressions;
 
-	public class Specification<TEntity> : ISpecification<TEntity>
+using System;
+using System.Linq;
+using System.Linq.Expressions;
+
+namespace Avantech.Common.Data.Specification
+{
+    public class Specification<TEntity> : ISpecification<TEntity>
 	{
 		public Specification(Expression<Func<TEntity, bool>> predicate)
 		{

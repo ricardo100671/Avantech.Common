@@ -1,14 +1,14 @@
-﻿namespace MyLibrary.Web
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Web.Mvc;
-	using Linq.Expressions;
-	using MySystem.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
-	public class MyController : Controller
+namespace Avantech.Common.Web
+{
+    using Avantech.Common.Linq.Expressions;
+    using Avantech.Common.Web.Mvc;
+
+    public class Controller : System.Web.Mvc.Controller
 	{
 		/// <summary>
 		/// Updates the model from registered Value Providers excluding the specified properties.
@@ -67,13 +67,13 @@
 			);
 		}
 
-		MyViewDataDictionary _ViewData;
-		new public MyViewDataDictionary ViewData
+		ViewDataDictionary _ViewData;
+		new public ViewDataDictionary ViewData
 		{
 			get
 			{
 				return _ViewData 
-					?? (_ViewData = new MyViewDataDictionary());
+					?? (_ViewData = new ViewDataDictionary());
 			}
 			set
 			{

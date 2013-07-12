@@ -1,9 +1,10 @@
-﻿namespace MyLibrary.Security {
-	using System.Collections.Generic;
-	using System.Text;
-	using Data;
+﻿
+using Avantech.Common.Data;
+using System.Collections.Generic;
+using System.Text;
 
-	/// <summary>
+namespace Avantech.Common.Security {
+    /// <summary>
 	/// A specific role related to security.
 	/// </summary>
 	public abstract class SecurityRole<TUser, TSecurityRole, TUserPasswordHistory, TEntityTypesEnum> : IAuditable<TEntityTypesEnum>

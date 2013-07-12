@@ -1,8 +1,8 @@
-namespace MyLibrary
-{
-	using System;
+using System;
 
-	public static class IntExtensions
+namespace Avantech.Common
+{
+    public static class IntExtensions
 	{
 		/// <summary>
 		/// Converts an Enum member for an integer

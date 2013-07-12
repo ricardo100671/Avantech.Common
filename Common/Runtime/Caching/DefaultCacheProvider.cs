@@ -1,9 +1,10 @@
-namespace MyLibrary.Runtime.Caching
-{
-	using System;
-	using System.Runtime.Caching;
 
-	public class DefaultCacheProvider<TCacheKeyEnum> : ICacheProvider<TCacheKeyEnum>
+using System;
+using System.Runtime.Caching;
+
+namespace Avantech.Common.Runtime.Caching
+{
+    public class DefaultCacheProvider<TCacheKeyEnum> : ICacheProvider<TCacheKeyEnum>
 		where TCacheKeyEnum : struct
     {
         private static ObjectCache Cache
