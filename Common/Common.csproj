@@ -228,7 +228,7 @@
     <Compile Include="Web\Mvc\LocalisationActionAttribute.cs" />
     <Compile Include="Web\Mvc\ModelStateDictionaryExtensions.cs" />
     <Compile Include="Web\Mvc\CacheParametersAttribute.cs" />
-    <Compile Include="Web\MyController.cs" />
+    <Compile Include="Web\Controller.cs" />
     <Compile Include="Web\Security\MembershipProxy.cs" />
   </ItemGroup>
   <ItemGroup>

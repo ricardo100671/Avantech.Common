@@ -7,7 +7,7 @@ namespace Avantech.Common.Web.Mvc
     /// <summary>
     /// Html Attribute Dictionary for use with Html Helpers when specifying css classes on a OOCss manner
     /// </summary>
-    public class HubHtmlAttributeDictionary : IDictionary<string, object>
+    public class HtmlAttributeDictionary : IDictionary<string, object>
     {
         private readonly IDictionary<string, object> _dictionary;
         public const string DataOoClass = "data-oo-class";
@@ -16,7 +16,7 @@ namespace Avantech.Common.Web.Mvc
         /// <summary>
         /// Initializes a new instance of the <see cref="HubHtmlAttributeDictionary"/> class.
         /// </summary>
-        public HubHtmlAttributeDictionary()
+        public HtmlAttributeDictionary()
         {
             _dictionary = new Dictionary<string, object>();
         }
@@ -25,7 +25,7 @@ namespace Avantech.Common.Web.Mvc
 		/// Initializes a new instance of the <see cref="HubHtmlAttributeDictionary"/> class.
 		/// </summary>
 		/// <param name="attributeDictionary">The attribute dictionary.</param>
-    	public HubHtmlAttributeDictionary(IDictionary<string, object> attributeDictionary) {
+    	public HtmlAttributeDictionary(IDictionary<string, object> attributeDictionary) {
 			_dictionary = new Dictionary<string, object>(attributeDictionary);
 		}
 

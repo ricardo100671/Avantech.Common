@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,14 @@ using System.Web.Routing;
 
 namespace Avantech.Common.Web.Mvc{
     public static class ControllerExtensions {
-        public static RedirectToRouteResult HubRedirectToActionPermanent<TController>(this TController controller, Expression<Action<TController>> action, bool useTempData = false, string routeName = null) where TController : Controller {
+        public static RedirectToRouteResult RedirectToActionPermanent<TController>(this TController controller, Expression<Action<TController>> action, bool useTempData = false, string routeName = null) 
+			where TController : Controller {
+
             return _RedirectToAction(controller, action, useTempData, true, routeName);
         }
 
-        public static RedirectToRouteResult HubRedirectToAction<TController>(this TController controller, Expression<Action<TController>> action, bool useTempData = false, string routeName = null) where TController : Controller {
+        public static RedirectToRouteResult RedirectToAction<TController>(this TController controller, Expression<Action<TController>> action, bool useTempData = false, string routeName = null) 
+			where TController : Controller {
             return _RedirectToAction(controller, action, useTempData, false, routeName);
         }
 
